@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASE_API: 'https://beep2.cellulant.com:9001/assessment/retail',
 };
 
 /*

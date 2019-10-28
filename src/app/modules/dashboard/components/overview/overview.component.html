@@ -1,0 +1,47 @@
+<h2 class="h2">Dashboard Overview</h2>
+
+<section class="tabs">
+  <div>
+    <p>Total Value</p>
+    <p *ngFor="let value of totalValue">{{value.totalValue | currency:'Ksh ': 'symbol' : '1.0-0'}}</p>
+    <p>Chamas</p>
+  </div>
+  <div>
+    <p>No Of Orders</p>
+    <p *ngFor="let orders of totalOrders">{{orders.totalOrders | currency:'Ksh ': 'symbol' : '1.0-0'}}</p>
+    <p>New Requests</p>
+  </div>
+  <div>
+    <p >Total Value Last 30Dys</p>
+    <p *ngFor="let value of totalValueLast30">{{value.totalValue | currency:'Ksh ': 'symbol' : '1.0-0'}}</p>
+    <p>Transactions</p>
+  </div>
+  <div>
+    <p>Orders Last 30Dys</p>
+    <p *ngFor="let orders of totalOrdersLast30">{{orders.totalOrders | currency:'Ksh ': 'symbol' : '1.0-0'}}</p>
+    <p>Orders</p>
+  </div>
+</section>
+<section class="map-section">
+  <agm-map
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  (mapClick)="mapClicked($event)"
+  >
+    <agm-marker
+      *ngFor="let point of markers; let i = index"
+      [latitude]="point.latitude"
+      [longitude]="point.longitude"
+      [label]="point.names.slice(0,1)"
+    >
+    <agm-info-window class="info-window">
+      <strong>Name: {{point.names}}</strong>
+      <p>Orders: {{point.tatalOrdersMade}}</p>
+      <p>Amount: {{point.totalIndividualAmount | currency:'Ksh ': 'symbol' : '1.0-0'}}</p>
+    </agm-info-window>
+
+    </agm-marker>
+  </agm-map>
+
+</section>

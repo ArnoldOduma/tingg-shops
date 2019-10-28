@@ -1,0 +1,34 @@
+[debug] [2019-10-28T14:05:39.722Z] ----------------------------------------------------------------------
+[debug] [2019-10-28T14:05:39.724Z] Command:       /home/moringa/.nvm/versions/node/v12.10.0/bin/node /home/moringa/.nvm/versions/node/v12.3.1/bin/firebase deploy
+[debug] [2019-10-28T14:05:39.724Z] CLI Version:   7.6.1
+[debug] [2019-10-28T14:05:39.724Z] Platform:      linux
+[debug] [2019-10-28T14:05:39.724Z] Node Version:  v12.10.0
+[debug] [2019-10-28T14:05:39.725Z] Time:          Mon Oct 28 2019 17:05:39 GMT+0300 (East Africa Time)
+[debug] [2019-10-28T14:05:39.725Z] ----------------------------------------------------------------------
+[debug] [2019-10-28T14:05:39.725Z] 
+[debug] [2019-10-28T14:05:39.731Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-28T14:05:39.732Z] > authorizing via signed-in user
+[debug] [2019-10-28T14:05:39.732Z] [iam] checking project cellulant-1 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-10-28T14:05:39.733Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-28T14:05:39.734Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-28T14:05:40.466Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-28T14:05:40.520Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cellulant-1:testIamPermissions  
+
+[debug] [2019-10-28T14:05:42.920Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-28T14:05:42.929Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/cellulant-1  
+ 
+[debug] [2019-10-28T14:05:50.876Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'cellulant-1'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-10-28T14:05:50.882Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/cellulant-1/versions  
+
+[debug] [2019-10-28T14:05:54.799Z] <<< HTTP RESPONSE 200
+[info] i  hosting[cellulant-1]: beginning deploy...
+[info] i  hosting[cellulant-1]: found 9 files in dist/cellulant
+[debug] [2019-10-28T14:05:54.876Z] [hosting] hash cache [ZGlzdC9jZWxsdWxhbnQ] stored for 9 files
+[debug] [2019-10-28T14:05:54.876Z] [hosting][hash queue][FINAL]
+[debug] [2019-10-28T14:05:54.876Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/cellulant-1/versions/7137f01f9740fca5:populateFiles  
+ <request body omitted>

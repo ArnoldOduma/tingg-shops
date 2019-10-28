@@ -1,0 +1,87 @@
+.h2 {
+  padding: 20px 10px 10px 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+  width: 98%;
+}
+
+.tabs>div {
+  width: 24%;
+  min-width: 200px;
+  padding: 20px 2px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px #636363;
+}
+
+.tabs p {
+  padding: 5px;
+  color: white;
+  text-shadow: 0 0 10px #000000;
+}
+
+.tabs>div p:nth-child(1) {
+  border-bottom: 1px solid #ffffff75;
+  padding-bottom: 20px;
+  font-size: 1.3em;
+}
+
+.tabs>div p:nth-child(2) {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.tabs>div p:nth-child(3) {
+  font-size: 0.8em;
+}
+
+.tabs div:nth-child(1) {
+  background: linear-gradient(to right, #5d538b, #f65058 80%);
+}
+
+.tabs>div:nth-child(2) {
+  background: linear-gradient(to right, #f65058, #ffc915 30%);
+
+}
+
+.tabs>div:nth-child(3) {
+  background: #f984ca;
+
+}
+
+.tabs>div:nth-child(4) {
+  background: linear-gradient(to right, #5d538b, #5d538b, #f65058);
+}
+
+.map-section {
+  box-shadow: 0 0 10px #00000060;
+  width: 98%;
+}
+
+agm-map {
+  position: relative;
+  margin-top: 30px;
+  height: 300px;
+  width: 100%;
+}
+info-window{
+  background: red;
+}
+.map-section .gm-style-iw {
+  background-color: #ff0000;
+  padding: 2% 11%;
+}
+.map-section .iw-content p {
+  color: #a5a5a5;
+}
+.map-section .iw-subTitle {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 0;
+}

@@ -1,0 +1,13 @@
+section{
+  background: #0d171a27 ;
+  min-height: 100vh;
+}
+.router-outlet{
+   /* background: red; */
+  /* position: fixed; */
+  right: 0px;
+  width: calc(100vw - 200px);
+  position: absolute;
+  right: 0px;
+  top: 100px;
+}

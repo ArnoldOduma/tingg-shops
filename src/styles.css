@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+Baby pink - F984CA
+Dark pink - F65058
+Blue- 6CD1EF
+Purple - 5DD38B
+Yellow - FFC915
+Black - 0D171A
+green -38D23D
+
+*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.8em;
+  color: #0d171a;
+}
