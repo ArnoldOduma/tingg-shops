@@ -12,12 +12,12 @@ const routes: Routes = [
     children:[
       {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'overview',
         pathMatch: 'full'
       },
       {
         path: 'overview',
-        component: OverviewComponent 
+        component: OverviewComponent
       },
     ]
   },
