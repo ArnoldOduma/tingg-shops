@@ -6,6 +6,8 @@ header {
   flex-wrap: wrap;
   width: 100%;
   padding: 10px 0px 10px 0;
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
@@ -13,6 +15,8 @@ header {
   display: inline-block;
   line-height: 18px;
   padding: 0 10px;
+  width: 150px;
+  padding-left: 25px;
 }
 
 .logo img {
@@ -46,11 +50,11 @@ nav>div{
 .search-div i{
   position: absolute;
   right: 10px;
-  top: 20%;
+  top: 18%;
   cursor: pointer;
 }
 .search-div input{
-  padding: 10px 10px;
+  padding: 8px 10px;
   border: none;
   width: 220px;
   background: #0d171a1e;
@@ -82,8 +86,13 @@ nav>div{
   background: #fff;
   box-shadow: 0px 10px 10px #000;
   width: 160px;
-  height: 100vh;
+  height: 100%;
   text-align: center;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  padding-top: 120px;
 }
 .side-nav ul li{
   color: #F65058;

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { map } from 'rxjs/operators';
-import { marker } from '../../../../shared/models/marker.interface';
 import { MouseEvent } from '@agm/core'
 
 @Component({
@@ -17,7 +16,7 @@ export class OverviewComponent implements OnInit {
   markers: any = [];
   compiledMapData: any = [];
   totalValue: any = [];
-  errorMessage = '';
+  errorMessages: any = [];
   totalOrders: any = [];
   totalOrdersLast30: any = [];
   totalValueLast30: any = [];
@@ -35,71 +34,58 @@ export class OverviewComponent implements OnInit {
   }
 
   getCompiledMapData() {
-    this.apiService.getCompiledMapData().subscribe(
-      (res) => {
+    this.apiService.getCompiledMapData()
+      .then(res => {
         this.compiledMapData = res;
-        // console.log(res);
         this.markers = this.compiledMapData;
-
         this.lat = this.markers[0].latitude;
         this.lng = this.markers[0].longitude;
-        console.log(this.markers);
-      },
-      (err) => {
-        this.errorMessage = err.message
-        console.log(err);
-      }
-    )
+      }).catch(err => {
+        this.errorMessages.push(err.statusText)
+      })
   }
 
   getTotalValue() {
-    this.apiService.getTotalValue().subscribe(
-      (res) => {
+    this.apiService.getTotalValue()
+      .then(res => {
         this.totalValue = res;
         console.log(res);
-      },
-      (err) => {
-        this.errorMessage = err.message
+      }).catch(err => {
+        this.errorMessages.push(err.statusText)
         console.log(err);
-      }
-    )
+      })
   }
   getTotalValueLast30() {
-    this.apiService.getTotalValueLast30days().subscribe(
-      (res) => {
+    this.apiService.getTotalValueLast30days()
+      .then(res => {
         this.totalValueLast30 = res;
         console.log(res);
-      },
-      (err) => {
-        this.errorMessage = err.message
+      }).catch(err => {
+        this.errorMessages.push(err.statusText)
         console.log(err);
-      }
-    )
+      })
   }
 
   getTotalOrders() {
-    this.apiService.getTotalOrders().subscribe(
-      (res) => {
+    this.apiService.getTotalOrders()
+      .then(res => {
         this.totalOrders = res;
         console.log(res);
-      },
-      (err) => {
-        this.errorMessage = err.message
+      }).catch(err => {
+        this.errorMessages.push(err.statusText)
         console.log(err);
-      }
-    )
+      })
   }
-  getOrdersLast30days(){
-    this.apiService.getTotalOrdersLast30days().subscribe(
-      (res) => {
+  getOrdersLast30days() {
+    this.apiService.getTotalOrdersLast30days()
+      .then(res => {
         this.totalOrdersLast30 = res;
         console.log(res);
-      },
-      (err) => {
-        this.errorMessage = err.message
+      })
+      .catch(err => {
+        this.errorMessages.push(err.statusText)
         console.log(err);
-      }
-    )
+      })
   }
 
   mapClicked($event: MouseEvent) {

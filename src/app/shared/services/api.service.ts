@@ -12,49 +12,75 @@ export class ApiService {
 
   BASE_URL = environment.BASE_API;
   compiledMapData = `${this.BASE_URL}/dataCompiledMapData.php`;
-
   totalValue = `${this.BASE_URL}/dataTotalValue.php`;
   totalOrders = `${this.BASE_URL}/dataTotalOrders.php`;
   totalValueLast30days = `${this.BASE_URL}/dataTotalValueLast30Days.php`;
   totalOrdersLast30days = `${this.BASE_URL}/dataTotalOrdersLast30Days.php`;
 
-
   constructor(
-    // private http: HttpClient,
     private http: HttpClient
   ) { }
 
 
   getCompiledMapData() {
     const url = this.compiledMapData;
-    return this.http.get(url).pipe(
-      retry(1)
-
-    )
+    return new Promise<any>((resolve, reject) => {
+      this.http.get(url).pipe(
+        retry(1)
+      ).toPromise().then(res => {
+        resolve(res)
+      }).catch(err => {
+        reject(err)
+      })
+    });
   }
-  getTotalValue(){
+  getTotalValue() {
     const url = this.totalValue;
-    return this.http.get(url).pipe(
-      retry(1)
-    )
+    return new Promise<any>((resolve, reject) => {
+      this.http.get(url).pipe(
+        retry(1)
+      ).toPromise().then(res => {
+        resolve(res)
+      }).catch(err => {
+        reject(err)
+      })
+    });
   }
-  getTotalValueLast30days(){
+  getTotalValueLast30days() {
     const url = this.totalValueLast30days;
-    return this.http.get(url).pipe(
-      retry(1)
-    )
+    return new Promise<any>((resolve, reject) => {
+      this.http.get(url).pipe(
+        retry(1)
+      ).toPromise().then(res => {
+        resolve(res)
+      }).catch(err => {
+        reject(err)
+      })
+    });
   }
-  getTotalOrders(){
+  getTotalOrders() {
     const url = this.totalOrders;
-    return this.http.get(url).pipe(
-      retry(1)
-    )
+    return new Promise<any>((resolve, reject) => {
+      this.http.get(url).pipe(
+        retry(1)
+      ).toPromise().then(res => {
+        resolve(res)
+      }).catch(err => {
+        reject(err)
+      })
+    });
   }
-  getTotalOrdersLast30days(){
+  getTotalOrdersLast30days() {
     const url = this.totalOrdersLast30days;
-    return this.http.get(url).pipe(
-      retry(1)
-    )
+    return new Promise<any>((resolve, reject) => {
+      this.http.get(url).pipe(
+        retry(1)
+      ).toPromise().then(res => {
+        resolve(res)
+      }).catch(err => {
+        reject(err)
+      })
+    });
   }
 
 }
