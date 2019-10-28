@@ -8,7 +8,7 @@
   </div>
   <div>
     <p>No Of Orders</p>
-    <p *ngFor="let orders of totalOrders">{{orders.totalOrders | currency:'Ksh ': 'symbol' : '1.0-0'}}</p>
+    <p *ngFor="let orders of totalOrders">{{orders.totalOrders}}</p>
     <p>New Requests</p>
   </div>
   <div>
@@ -18,10 +18,15 @@
   </div>
   <div>
     <p>Orders Last 30Dys</p>
-    <p *ngFor="let orders of totalOrdersLast30">{{orders.totalOrders | currency:'Ksh ': 'symbol' : '1.0-0'}}</p>
+    <p *ngFor="let orders of totalOrdersLast30">{{orders.totalOrders}}</p>
     <p>Orders</p>
   </div>
 </section>
+<div class="alert alert-error">
+  <p *ngFor="let error of errorMessages; let i = index">
+    Error {{i+1}} : {{error}}
+  </p>
+</div>
 <section class="map-section">
   <agm-map
   [latitude]="lat"
@@ -40,7 +45,6 @@
       <p>Orders: {{point.tatalOrdersMade}}</p>
       <p>Amount: {{point.totalIndividualAmount | currency:'Ksh ': 'symbol' : '1.0-0'}}</p>
     </agm-info-window>
-
     </agm-marker>
   </agm-map>
 
